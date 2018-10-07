@@ -28,7 +28,9 @@ library.add(faFacebook, faInstagram, faTwitter);
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+    <Helmet>
+      <meta name="robots" content="noindex, nofollow"/>
+    </Helmet>
     <SiteHeader />
     <div className="mt-5">{children}</div>
     <footer id="footer" className="text-white bg-brown py-4">

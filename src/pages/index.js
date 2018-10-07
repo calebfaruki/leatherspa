@@ -15,6 +15,7 @@ import {
   Button,
 } from "reactstrap";
 import Layout from "../components/Layout";
+import Helmet from 'react-helmet';
 
 export default class IndexPage extends React.Component {
   render() {
@@ -23,6 +24,10 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
+        <Helmet>
+          <title>Leather Spa</title>
+          <link rel="canonical" href="https://leatherspa.com" />
+        </Helmet>
         <main>
           <section className="section section-introduction bg-beige z-15">
             <ul className="list-unstyled mb-0">
