@@ -21,18 +21,13 @@ export const RepairCategoryTemplate = ({
   return (
     <section className="section">
       {helmet || ''}
-      <Container></Container>
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1>
-              {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-          </div>
-        </div>
-      </div>
+      <Container>
+        <h1>
+          {title}
+        </h1>
+        <p>{description}</p>
+        <PostContent content={content} />
+      </Container>
     </section>
   )
 }

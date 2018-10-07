@@ -47,7 +47,12 @@ export default class SiteHeader extends React.Component {
       <Container fluid>
         <Navbar color="light" light expand="md" className="fixed-top py-0">
           <NavbarBrand href="/" title="Leather Spa">
-            <img src="https://leatherspa.com//assets/svg/logo.svg" width="35" height="50" alt="Leather Spa logo"/>
+            <img
+              src="https://leatherspa.com/assets/svg/logo.svg"
+              width="35"
+              height="50"
+              alt="Leather Spa logo"
+            />
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -87,17 +92,25 @@ export default class SiteHeader extends React.Component {
                 <DropdownMenu className="text-primary" right>
                   <DropdownItem className="text-primary">Care</DropdownItem>
                   <DropdownItem className="text-primary">Comfort</DropdownItem>
-                  <DropdownItem className="text-primary">Accessories &amp; Gifts</DropdownItem>
+                  <DropdownItem className="text-primary">
+                    Accessories &amp; Gifts
+                  </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink href="/" className="text-primary">Customer Service</NavLink>
+                <NavLink href="/" className="text-primary">
+                  Customer Service
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/" className="text-primary">About</NavLink>
+                <NavLink href="/" className="text-primary">
+                  About
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/" className="text-primary">Locations</NavLink>
+                <NavLink href="/" className="text-primary">
+                  Locations
+                </NavLink>
               </NavItem>
               <NavItem>
                 <Form inline className="my-2 my-lg-0">
@@ -125,7 +138,7 @@ export default class SiteHeader extends React.Component {
                   title="Check Repair Status"
                 >
                   <FontAwesomeIcon icon="file-invoice" />
-                  <span class="sr-only">Check Repair Status</span>
+                  <span className="sr-only">Check Repair Status</span>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -135,13 +148,13 @@ export default class SiteHeader extends React.Component {
                   title="Corporate Accounts"
                 >
                   <FontAwesomeIcon icon="building" />
-                  <span class="sr-only">Corporate Accounts</span>
+                  <span className="sr-only">Corporate Accounts</span>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/" className="text-primary" title="Sign In">
                   <FontAwesomeIcon icon="sign-in-alt" />
-                  <span class="sr-only">Sign In</span>
+                  <span className="sr-only">Sign In</span>
                 </NavLink>
               </NavItem>
             </Nav>

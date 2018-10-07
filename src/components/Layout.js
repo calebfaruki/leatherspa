@@ -48,7 +48,7 @@ const TemplateWrapper = ({ children }) => (
                       <Link to="/" title="Facebook">
                         fdsa
                         <FontAwesomeIcon icon="facebook fab" />
-                        <i class="fab fa-facebook" />
+                        <i className="fab fa-facebook" />
                       </Link>
                     </li>
                     <li className="list-inline-item">

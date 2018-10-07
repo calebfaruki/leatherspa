@@ -31,6 +31,17 @@ body {
       }
     }
   }
+  .card  {
+    .card-img {
+      transition: filter 0.2s ease;
+      filter: sepia(50%);
+    }
+    &:hover {
+      .card-img {
+        filter: none;
+      }
+    }
+  }
 }
 .section-customer-service {
   .card-deck {

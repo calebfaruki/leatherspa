@@ -15,12 +15,13 @@ import {
   Button,
 } from "reactstrap";
 import Layout from "../components/Layout";
+import Map from "../components/Map";
 import Helmet from 'react-helmet';
 
 export default class IndexPage extends React.Component {
   render() {
-    // const { data } = this.props;
-    // const { edges: posts } = data.allMarkdownRemark;
+    const { data } = this.props;
+    const { edges: repairCategories } = data.allMarkdownRemark;
 
     return (
       <Layout>
@@ -71,126 +72,24 @@ export default class IndexPage extends React.Component {
                 </p>
               </div>
               <CardDeck>
-                <Card inverse className="bg-brown mt-4">
-                  <CardImg top width="100%" src="https://leatherspa.com/images/misc/01_Hover_Womensshoes.png" alt="Women's shoes" />
-                  <CardImgOverlay className="h-100 d-flex flex-column">
-                    <CardTitle className="text-uppercase">
-                      Women’s Shoes
-                    </CardTitle>
-                    <Button
-                      outline
-                      color="light"
-                      className="text-uppercase text-left mt-auto"
-                    >
-                      More
-                    </Button>
-                  </CardImgOverlay>
-                </Card>
-                <Card inverse className="bg-brown mt-4">
-                  <CardImg top width="100%" src="https://leatherspa.com/images/misc/01_Hover_Womensshoes.png" alt="Women's shoes" />
-                  <CardImgOverlay className="h-100 d-flex flex-column">
-                    <CardTitle className="text-uppercase">
-                      Women’s Boots
-                    </CardTitle>
-                    <Button
-                      outline
-                      color="light"
-                      className="text-uppercase text-left mt-auto"
-                    >
-                      More
-                    </Button>
-                  </CardImgOverlay>
-                </Card>
-                <Card inverse className="bg-brown mt-4">
-                  <CardImg top width="100%" src="https://leatherspa.com/images/misc/01_Hover_Womensshoes.png" alt="Women's shoes" />
-                  <CardImgOverlay className="h-100 d-flex flex-column">
-                    <CardTitle className="text-uppercase">
-                      Women’s Boots
-                    </CardTitle>
-                    <Button
-                      outline
-                      color="light"
-                      className="text-uppercase text-left mt-auto"
-                    >
-                      More
-                    </Button>
-                  </CardImgOverlay>
-                </Card>
-                <Card inverse className="bg-brown mt-4">
-                  <CardImg top width="100%" src="https://leatherspa.com/images/misc/01_Hover_Womensshoes.png" alt="Women's shoes" />
-                  <CardImgOverlay className="h-100 d-flex flex-column">
-                    <CardTitle className="text-uppercase">
-                      Women’s Boots
-                    </CardTitle>
-                    <Button
-                      outline
-                      color="light"
-                      className="text-uppercase text-left mt-auto"
-                    >
-                      More
-                    </Button>
-                  </CardImgOverlay>
-                </Card>
-                <Card inverse className="bg-brown mt-4">
-                  <CardImg top width="100%" src="https://leatherspa.com/images/misc/01_Hover_Womensshoes.png" alt="Women's shoes" />
-                  <CardImgOverlay className="h-100 d-flex flex-column">
-                    <CardTitle className="text-uppercase">
-                      Women’s Boots
-                    </CardTitle>
-                    <Button
-                      outline
-                      color="light"
-                      className="text-uppercase text-left mt-auto"
-                    >
-                      More
-                    </Button>
-                  </CardImgOverlay>
-                </Card>
-                <Card inverse className="bg-brown mt-4">
-                  <CardImg top width="100%" src="https://leatherspa.com/images/misc/01_Hover_Womensshoes.png" alt="Women's shoes" />
-                  <CardImgOverlay className="h-100 d-flex flex-column">
-                    <CardTitle className="text-uppercase">
-                      Women’s Boots
-                    </CardTitle>
-                    <Button
-                      outline
-                      color="light"
-                      className="text-uppercase text-left mt-auto"
-                    >
-                      More
-                    </Button>
-                  </CardImgOverlay>
-                </Card>
-                <Card inverse className="bg-brown mt-4">
-                  <CardImg top width="100%" src="https://leatherspa.com/images/misc/01_Hover_Womensshoes.png" alt="Women's shoes" />
-                  <CardImgOverlay className="h-100 d-flex flex-column">
-                    <CardTitle className="text-uppercase">
-                      Women’s Boots
-                    </CardTitle>
-                    <Button
-                      outline
-                      color="light"
-                      className="text-uppercase text-left mt-auto"
-                    >
-                      More
-                    </Button>
-                  </CardImgOverlay>
-                </Card>
-                <Card inverse className="bg-brown mt-4">
-                  <CardImg top width="100%" src="https://leatherspa.com/images/misc/01_Hover_Womensshoes.png" alt="Women's shoes" />
-                  <CardImgOverlay className="h-100 d-flex flex-column">
-                    <CardTitle className="text-uppercase">
-                      Women’s Boots
-                    </CardTitle>
-                    <Button
-                      outline
-                      color="light"
-                      className="text-uppercase text-left mt-auto"
-                    >
-                      More
-                    </Button>
-                  </CardImgOverlay>
-                </Card>
+                {repairCategories.map(({ node: post }) => (
+                  <Card inverse className="bg-brown mt-4 py-2" key={post.id}>
+                    <CardImg width="100%" src={post.frontmatter.full_image} alt="Women's shoes" />
+                    <CardImgOverlay className="h-100 d-flex flex-column">
+                      <CardTitle className="text-uppercase">
+                        {post.frontmatter.title}
+                      </CardTitle>
+                      <Button
+                        outline
+                        color="light"
+                        className="text-uppercase text-left mt-auto"
+                        to={post.fields.slug}
+                      >
+                        More
+                      </Button>
+                    </CardImgOverlay>
+                  </Card>
+                ))}
               </CardDeck>
             </Container>
           </section>
@@ -379,7 +278,9 @@ export default class IndexPage extends React.Component {
               </Row>
             </Container>
             <Container fluid={true} className="px-0">
-              <div id="map-container" className="bg-brown" />
+              <Map>
+                <div lat={40.834960} lng={-73.942730}>AINT THIS SOME SHIT</div>
+              </Map>
             </Container>
             <Container className="pb-5">
               <CardDeck>
@@ -390,14 +291,13 @@ export default class IndexPage extends React.Component {
                     </Link>
                   </CardTitle>
                   <CardText>
-                    <p>1 West 58th Street, New York, NY 10019</p>
-                    <p>
-                      <b>​Mon - Fri</b> 8am - 7pm
-                      <br />
-                      <b>Saturday</b> 9am - 6pm
-                      <br />
-                      <b>Sunday</b> 11am - 5pm
-                    </p>
+                    1 West 58th Street, New York, NY 10019
+                    <br />
+                    <b>​Mon - Fri</b> 8am - 7pm
+                    <br />
+                    <b>Saturday</b> 9am - 6pm
+                    <br />
+                    <b>Sunday</b> 11am - 5pm
                   </CardText>
                   <Button color="primary" className="mt-auto">Map + Directions</Button>
                 </Card>
@@ -408,14 +308,13 @@ export default class IndexPage extends React.Component {
                     </Link>
                   </CardTitle>
                   <CardText>
-                    <p>55 West 55th Street, New York, NY 10019</p>
-                    <p>
-                      <b>​Mon - Fri</b> 8am - 7pm
-                      <br />
-                      <b>Saturday</b> 10am - 6pm
-                      <br />
-                      <b>Sunday</b> Closed
-                    </p>
+                    55 West 55th Street, New York, NY 10019
+                    <br />
+                    <b>​Mon - Fri</b> 8am - 7pm
+                    <br />
+                    <b>Saturday</b> 10am - 6pm
+                    <br />
+                    <b>Sunday</b> Closed
                   </CardText>
                   <Button color="primary" className="mt-auto">Map + Directions</Button>
                 </Card>
@@ -426,17 +325,14 @@ export default class IndexPage extends React.Component {
                     </Link>
                   </CardTitle>
                   <CardText>
-                    <p>
                       89 East 42nd Street, New York, NY 10017 (Lower Level
                       Dining Concourse)
-                    </p>
-                    <p>
+                      <br />
                       <b>​Mon - Fri</b> 8am - 6:30pm
                       <br />
                       <b>Saturday</b> 9am - 4pm
                       <br />
                       <b>Sunday</b> Closed
-                    </p>
                   </CardText>
                   <Button color="primary" className="mt-auto">Map + Directions</Button>
                 </Card>
@@ -447,52 +343,19 @@ export default class IndexPage extends React.Component {
                     </Link>
                   </CardTitle>
                   <CardText>
-                    <p>28 John Street, New York, NY 10038</p>
-                    <p>
-                      <b>​Mon - Fri</b> 8am - 6pm
-                      <br />
-                      <b>Saturday</b> 9am - 6pm
-                      <br />
-                      <b>Sunday</b> Closed
-                    </p>
+                    28 John Street, New York, NY 10038
+                    <br />
+                    <b>​Mon - Fri</b> 8am - 6pm
+                    <br />
+                    <b>Saturday</b> 9am - 6pm
+                    <br />
+                    <b>Sunday</b> Closed
                   </CardText>
                   <Button color="primary" className="mt-auto">Map + Directions</Button>
                 </Card>
               </CardDeck>
             </Container>
           </section>
-          {/* <section className="section">
-            <Container>
-              <div className="content">
-                <h1 className="has-text-weight-bold is-size-2">
-                  Latest Stories
-                </h1>
-              </div>
-              {posts.map(({ node: post }) => (
-                <div
-                  className="content"
-                  style={{ border: "1px solid #eaecee", padding: "2em 4em" }}
-                  key={post.id}
-                >
-                  <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <p>
-                    {post.excerpt}
-                    <br />
-                    <br />
-                    <Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
-                    </Link>
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section> */}
         </main>
       </Layout>
     );
@@ -511,7 +374,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      filter: { frontmatter: { templateKey: { eq: "repair-category" } } }
     ) {
       edges {
         node {
@@ -522,6 +385,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            full_image
             templateKey
             date(formatString: "MMMM DD, YYYY")
           }
