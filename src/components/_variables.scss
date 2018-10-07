@@ -1,0 +1,15 @@
+
+// Within _variables.scss, you’ll find our color variables and Sass map. Here’s an example of the $colors Sass map:
+$brown: #655641;
+$black: #363636;
+$white: white;
+$beige: #bcb5a4;
+$orange: #f7921e;
+
+$primary: $orange;
+
+
+// Enables predefined box-shadow styles on various components.
+$enable-shadows: true;
+// Enables predefined border-radius styles on various components.
+$enable-rounded: false;

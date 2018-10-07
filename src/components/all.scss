@@ -1,0 +1,71 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap.scss';
+@import 'utilities';
+@import "footer";
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+.section-repair-services {
+  .card-deck {
+    @include media-breakpoint-down(sm) {
+      $columns: 1;
+      $deck-gutter-width: 30px;
+      .card {
+        flex: 0 0 calc(#{100/$columns}% - #{$deck-gutter-width});
+      }
+    }
+    @include media-breakpoint-only(md) {
+      $columns: 2;
+      $deck-gutter-width: 30px;
+      .card {
+        flex: 0 0 calc(#{100/$columns}% - #{$deck-gutter-width});
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      $columns: 4;
+      $deck-gutter-width: 30px;
+      .card {
+        flex: 0 0 calc(#{100/$columns}% - #{$deck-gutter-width});
+      }
+    }
+  }
+}
+.section-customer-service {
+  .card-deck {
+    @include media-breakpoint-down(sm) {
+      $columns: 1;
+      $deck-gutter-width: 30px;
+      .card {
+        flex: 0 0 calc(#{100/$columns}% - #{$deck-gutter-width});
+      }
+    }
+    @include media-breakpoint-only(md) {
+      $columns: 2;
+      $deck-gutter-width: 30px;
+      .card {
+        flex: 0 0 calc(#{100/$columns}% - #{$deck-gutter-width});
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      $columns: 3;
+      $deck-gutter-width: 30px;
+      .card {
+        flex: 0 0 calc(#{100/$columns}% - #{$deck-gutter-width});
+      }
+    }
+  }
+}
+
+.carousel-item {
+  width: 25%;
+}
+.carousel-item.active,
+.carousel-item.active + .carousel-item,
+.carousel-item.active + .carousel-item  + .carousel-item,
+.carousel-item.active + .carousel-item  + .carousel-item  + .carousel-item {
+   width: 25%;
+   display: block;
+   float:left;
+}
