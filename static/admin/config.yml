@@ -47,9 +47,35 @@ collections:
   - name: "repair-categories"
     label: "Repair Categories"
     folder: "src/pages/repair-services"
-    create: true
+    create: false
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "repair-category"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: Full_image, name: full_image, widget: image}
+
+  - name: "business-locations"
+    label: "Business Locations"
+    folder: "src/pages/locations"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "repair-category"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - label: "Address"
+        name: "address"
+        widget: "object"
+        fields:
+          - {label: "Street Address", name: "street", widget: "string"}
+          - {label: "City", name: "city", widget: "string"}
+          - {label: "Postal Code", name: "post-code", widget: "string"}
+          - label: "Latitude"
+            name: "latitude"
+            widget: "number"
+            default: 40.730610
+            valueType: "float"
+          - label: "Longitude"
+            name: "longitude"
+            widget: "number"
+            default: -73.935242
+            valueType: "float"
