@@ -1,5 +1,5 @@
 ---
-templateKey: repair-category
+templateKey: business-location
 title: The Plaza Hotel
 date: 2018-10-07T16:03:43.841Z
 address:

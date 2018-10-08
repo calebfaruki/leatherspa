@@ -1,5 +1,5 @@
 ---
-templateKey: repair-category
+templateKey: business-location
 title: Repair Facility
 date: 2018-10-07T16:09:28.231Z
 address:

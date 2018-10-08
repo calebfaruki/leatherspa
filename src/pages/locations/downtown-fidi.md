@@ -1,5 +1,5 @@
 ---
-templateKey: repair-category
+templateKey: business-location
 title: Downtown - FiDi
 date: 2018-10-07T16:07:26.568Z
 address:

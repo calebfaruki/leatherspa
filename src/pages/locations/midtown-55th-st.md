@@ -1,5 +1,5 @@
 ---
-templateKey: repair-category
+templateKey: business-location
 title: Midtown - 55th St.
 date: 2018-10-07T16:05:38.693Z
 address:

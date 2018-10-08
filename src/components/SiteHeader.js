@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   Container,
   Collapse,
@@ -16,7 +17,6 @@ import {
   Form,
   Input
 } from "reactstrap";
-
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -164,3 +164,14 @@ export default class SiteHeader extends React.Component {
     );
   }
 }
+
+SiteHeader.propTypes = {
+  data: PropTypes.shape({
+    businessLocations: PropTypes.shape({
+      edges: PropTypes.array
+    }),
+    repairCategories: PropTypes.shape({
+      edges: PropTypes.array
+    })
+  })
+};

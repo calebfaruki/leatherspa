@@ -67,16 +67,7 @@ body {
       }
     }
   }
-}
-
-.carousel-item {
-  width: 25%;
-}
-.carousel-item.active,
-.carousel-item.active + .carousel-item,
-.carousel-item.active + .carousel-item  + .carousel-item,
-.carousel-item.active + .carousel-item  + .carousel-item  + .carousel-item {
-   width: 25%;
-   display: block;
-   float:left;
+  .card-img {
+    width: 80px;
+  }
 }

@@ -21,8 +21,8 @@ import Helmet from 'react-helmet';
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
-    const { edges: repairCategories } = data.allMarkdownRemark;
-
+    const { edges: repairCategories } = data.repairCategories;
+    const { edges: businessLocations } = data.businessLocations;
     return (
       <Layout>
         <Helmet>
@@ -79,14 +79,11 @@ export default class IndexPage extends React.Component {
                       <CardTitle className="text-uppercase">
                         {post.frontmatter.title}
                       </CardTitle>
-                      <Button
-                        outline
-                        color="light"
-                        className="text-uppercase text-left mt-auto"
+                      <Link className="btn btn-outline-light text-uppercase text-left mt-auto"
                         to={post.fields.slug}
                       >
                         More
-                      </Button>
+                      </Link>
                     </CardImgOverlay>
                   </Card>
                 ))}
@@ -103,7 +100,7 @@ export default class IndexPage extends React.Component {
                       Our hand-crafted artistry is in a league of its own. View
                       our miraculous transformations below.
                     </p>
-                    <Button color="primary">Start Repair</Button>
+                    <Button color="primary" className="text-uppercase">Start Repair</Button>
                   </div>
                   <article
                     className="carousel row"
@@ -167,86 +164,86 @@ export default class IndexPage extends React.Component {
                   </div>
 
                   <CardDeck>
-                    <Card className="bg-transparent mt-4">
-                      <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <Card className="bg-transparent mt-4 text-center">
+                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/pick-up.png" alt="Card image cap" />
                       <CardBody>
-                        <CardTitle className="text-white">Pick-Up Service</CardTitle>
+                        <CardTitle className="text-white text-uppercase">Pick-Up Service</CardTitle>
                         <Button
                           outline
                           block
                           color="light"
-                          className="mt-auto"
+                          className="mt-auto text-uppercase"
                         >
                           Schedule Now
                         </Button>
                       </CardBody>
                     </Card>
-                    <Card className="bg-transparent mt-4">
-                      <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <Card className="bg-transparent mt-4 text-center">
+                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/Delivery_4.png" alt="Card image cap" />
                       <CardBody>
-                        <CardTitle className="text-white">Delivery Service</CardTitle>
+                        <CardTitle className="text-white text-uppercase">Delivery Service</CardTitle>
                         <Button
                           outline
                           block
                           color="light"
-                          className="mt-auto"
+                          className="mt-auto text-uppercase"
                         >
                           Schedule Now
                         </Button>
                       </CardBody>
                     </Card>
-                    <Card className="bg-transparent mt-4">
-                      <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <Card className="bg-transparent mt-4 text-center">
+                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/ticket-check.png" alt="Card image cap" />
                       <CardBody>
-                        <CardTitle className="text-white">Check Repair Status</CardTitle>
+                        <CardTitle className="text-white text-uppercase">Check Repair Status</CardTitle>
                         <Button
                           outline
                           block
                           color="light"
-                          className="mt-auto"
+                          className="mt-auto text-uppercase"
                         >
                           Check Repair Status
                         </Button>
                       </CardBody>
                     </Card>
 
-                    <Card className="bg-transparent mt-4">
-                      <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <Card className="bg-transparent mt-4 text-center">
+                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/pay.png" alt="Card image cap" />
                       <CardBody>
-                        <CardTitle className="text-white">Pay For Services</CardTitle>
+                        <CardTitle className="text-white text-uppercase">Pay For Services</CardTitle>
                         <Button
                           outline
                           block
                           color="light"
-                          className="mt-auto"
+                          className="mt-auto text-uppercase"
                         >
                           Pay Now
                         </Button>
                       </CardBody>
                     </Card>
-                    <Card className="bg-transparent mt-4">
-                      <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <Card className="bg-transparent mt-4 text-center">
+                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/tips.png" alt="Card image cap" />
                       <CardBody>
-                        <CardTitle className="text-white">Tips From The Experts</CardTitle>
+                        <CardTitle className="text-white text-uppercase">Tips From The Experts</CardTitle>
                         <Button
                           outline
                           block
                           color="light"
-                          className="mt-auto"
+                          className="mt-auto text-uppercase"
                         >
                           Read More
                         </Button>
                       </CardBody>
                     </Card>
-                    <Card className="bg-transparent mt-4">
-                      <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                    <Card className="bg-transparent mt-4 text-center">
+                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/operational-policies.png" alt="Card image cap" />
                       <CardBody>
-                        <CardTitle className="text-white">Operational Policies</CardTitle>
+                        <CardTitle className="text-white text-uppercase">Operational Policies</CardTitle>
                         <Button
                           outline
                           block
                           color="light"
-                          className="mt-auto"
+                          className="mt-auto text-uppercase"
                         >
                           Read More
                         </Button>
@@ -264,7 +261,7 @@ export default class IndexPage extends React.Component {
                 <div className="col-lg-12">
                   <div className="jumbotron bg-transparent text-center">
                     <h2>
-                      <Link to="/" className="text-dark">
+                      <Link to="/" className="text-dark text-uppercase">
                         Locations
                       </Link>
                     </h2>
@@ -272,7 +269,7 @@ export default class IndexPage extends React.Component {
                       Experience our expertise in-person at one of our
                       breathtaking Manhattan locations.
                     </p>
-                    <Button color="primary">Contact Us</Button>
+                    <Button color="primary" className="text-uppercase">Contact Us</Button>
                   </div>
                 </div>
               </Row>
@@ -284,75 +281,27 @@ export default class IndexPage extends React.Component {
             </Container>
             <Container className="pb-5">
               <CardDeck>
-                <Card body className="bg-transparent border-0 p-1">
-                  <CardTitle className="text-uppercase">
-                    <Link to="/" className="text-dark">
-                      The Plaza Hotel
-                    </Link>
-                  </CardTitle>
-                  <CardText>
-                    1 West 58th Street, New York, NY 10019
-                    <br />
-                    <b>​Mon - Fri</b> 8am - 7pm
-                    <br />
-                    <b>Saturday</b> 9am - 6pm
-                    <br />
-                    <b>Sunday</b> 11am - 5pm
-                  </CardText>
-                  <Button color="primary" className="mt-auto">Map + Directions</Button>
-                </Card>
-                <Card body className="bg-transparent border-0 p-1">
-                  <CardTitle className="text-uppercase">
-                    <Link to="/" className="text-dark">
-                      Midtown - 55th St.
-                    </Link>
-                  </CardTitle>
-                  <CardText>
-                    55 West 55th Street, New York, NY 10019
-                    <br />
-                    <b>​Mon - Fri</b> 8am - 7pm
-                    <br />
-                    <b>Saturday</b> 10am - 6pm
-                    <br />
-                    <b>Sunday</b> Closed
-                  </CardText>
-                  <Button color="primary" className="mt-auto">Map + Directions</Button>
-                </Card>
-                <Card body className="bg-transparent border-0 p-1">
-                  <CardTitle className="text-uppercase">
-                    <Link to="/" className="text-dark">
-                      Grand Central Terminal
-                    </Link>
-                  </CardTitle>
-                  <CardText>
-                      89 East 42nd Street, New York, NY 10017 (Lower Level
-                      Dining Concourse)
+                {businessLocations.map(({ node: post }) => (
+                  <Card body className="bg-transparent border-0 p-1" key={post.id}>
+                    <CardTitle className="text-uppercase">
+                      <Link to={post.fields.slug} className="text-dark">
+                        {post.frontmatter.title}
+                      </Link>
+                    </CardTitle>
+                    <CardText>
+                      1 West 58th Street, New York, NY 10019
                       <br />
-                      <b>​Mon - Fri</b> 8am - 6:30pm
+                      <b>​Mon - Fri</b> 8am - 7pm
                       <br />
-                      <b>Saturday</b> 9am - 4pm
+                      <b>Saturday</b> 9am - 6pm
                       <br />
-                      <b>Sunday</b> Closed
-                  </CardText>
-                  <Button color="primary" className="mt-auto">Map + Directions</Button>
-                </Card>
-                <Card body className="bg-transparent border-0 p-1">
-                  <CardTitle className="text-uppercase">
-                    <Link to="/" className="text-dark">
-                      Downtown - FiDi
-                    </Link>
-                  </CardTitle>
-                  <CardText>
-                    28 John Street, New York, NY 10038
-                    <br />
-                    <b>​Mon - Fri</b> 8am - 6pm
-                    <br />
-                    <b>Saturday</b> 9am - 6pm
-                    <br />
-                    <b>Sunday</b> Closed
-                  </CardText>
-                  <Button color="primary" className="mt-auto">Map + Directions</Button>
-                </Card>
+                      <b>Sunday</b> 11am - 5pm
+                    </CardText>
+                    <Button color="primary" className="mt-auto" to={post.fields.slug}>
+                    Map + Directions
+                    </Button>
+                    </Card>
+                ))}
               </CardDeck>
             </Container>
           </section>
@@ -364,15 +313,33 @@ export default class IndexPage extends React.Component {
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    businessLocations: PropTypes.shape({
+      edges: PropTypes.array
+    }),
+    repairCategories: PropTypes.shape({
       edges: PropTypes.array
     })
   })
 };
 
 export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(
+  query HomePageQuery {
+    businessLocations: allMarkdownRemark(
+      sort: {order: DESC, fields: [frontmatter___date]},
+      filter: {frontmatter: {templateKey: {eq: "business-location"}}}) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+    repairCategories: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { templateKey: { eq: "repair-category" } } }
     ) {

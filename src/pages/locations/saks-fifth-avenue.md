@@ -1,5 +1,5 @@
 ---
-templateKey: repair-category
+templateKey: business-location
 title: Saks Fifth Avenue
 date: 2018-10-07T16:08:37.176Z
 address:

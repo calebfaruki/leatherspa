@@ -1,5 +1,5 @@
 ---
-templateKey: repair-category
+templateKey: business-location
 title: Grand Central Terminal
 date: 2018-10-07T16:06:51.959Z
 address:
