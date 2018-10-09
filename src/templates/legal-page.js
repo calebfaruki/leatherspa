@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
 import {
   Container,
-  Jumbotron,
   Row,
-  Col,
-  Button
+  Col
 } from "reactstrap";
 
 export const LegalPageTemplate = ({ title, content, contentComponent }) => {
@@ -17,11 +15,11 @@ export const LegalPageTemplate = ({ title, content, contentComponent }) => {
 
   return (
     <main>
-      <section className="section section-legal bg-light-brown">
+      <section className="section section-legal bg-beige py-5">
         <Container>
           <Row>
             <Col lg={{ size: 10, offset: 1 }}>
-              <h1>{title}</h1>
+              <h1 className="text-center mb-5">{title}</h1>
               <PageContent className="content" content={content} />
             </Col>
           </Row>

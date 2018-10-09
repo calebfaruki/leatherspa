@@ -30,7 +30,7 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
 
-      - file: "src/pages/about/policies.md"
+      - file: "src/pages/legal/policies.md"
         label: "Operational Policies"
         name: "policies"
         fields:
@@ -38,13 +38,13 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
 
-      - file: "src/pages/about/privacy-policy.md"
-        label: "Leather Spa Policy & Terms"
-        name: "privacy-policy"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "privacy-policy-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+      # - file: "src/pages/about/privacy-policy.md"
+      #   label: "Leather Spa Policy & Terms"
+      #   name: "privacy-policy"
+      #   fields:
+      #     - {label: "Template Key", name: "templateKey", widget: "hidden", default: "privacy-policy-page"}
+      #     - {label: "Title", name: "title", widget: "string"}
+      #     - {label: "Body", name: "body", widget: "markdown"}
 
       - file: "src/pages/products/index.md"
         label: "Products Page"
@@ -73,7 +73,7 @@ collections:
 
   - name: "business-locations"
     label: "Business Locations"
-    folder: "src/pages/locations"
+    folder: "src/pages/location"
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "business-location"}

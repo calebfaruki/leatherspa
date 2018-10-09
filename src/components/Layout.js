@@ -10,8 +10,8 @@ import {
   Label,
   Input
 } from "reactstrap";
-import { Link } from "gatsby";
 
+import Link from "../components/Link";
 import SiteHeader from "../components/SiteHeader";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -148,13 +148,13 @@ const TemplateWrapper = ({ children }) => (
               &copy; 2008-2018 LEATHER SPA. All Rights Reserved Worldwide.
               <Link to="/">Home</Link>
               &nbsp;/&nbsp;
-              <Link to="/">Privacy Policy</Link>
+              <Link to="/legal/privacy-policy">Privacy Policy</Link>
               &nbsp;/&nbsp;
-              <Link to="/">Operational Policies</Link>
+              <Link to="/legal/policies">Operational Policies</Link>
               &nbsp;/&nbsp;
-              <Link to="/">Help Center</Link>
+              <Link to="https://leatherspa.zendesk.com/hc/en-us">Help Center</Link>
               &nbsp;/&nbsp;
-              <Link to="/">Made in NYC</Link>
+              <Link to="https://madeinnyc.org/company/leather-spa/">Made in NYC</Link>
             </small>
           </div>
         </Row>

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import {
   Container,
   Row,
@@ -14,6 +14,7 @@ import {
   CardImgOverlay,
   Button,
 } from "reactstrap";
+import Link from "../components/Link";
 import Layout from "../components/Layout";
 import Map from "../components/Map";
 import Helmet from 'react-helmet';
@@ -30,7 +31,7 @@ export default class IndexPage extends React.Component {
           <link rel="canonical" href="https://leatherspa.com" />
         </Helmet>
         <main>
-          <section className="section section-introduction bg-beige z-15">
+          <section className="section section-carousel bg-beige z-15">
             <ul className="list-unstyled mb-0">
               <li>
                 <Container className="text-center">
@@ -57,7 +58,7 @@ export default class IndexPage extends React.Component {
           </section>
           <section className="section section-repair-services bg-leather z-15">
             <Container>
-              <div className="jumbotron bg-transparent text-center text-white">
+              <div className="jumbotron bg-transparent mb-0 text-center text-white">
                 <h2>
                   <Link to="/" className="text-white text-uppercase">
                     Repair Services
@@ -94,13 +95,15 @@ export default class IndexPage extends React.Component {
             <Container className="pb-5">
               <Row>
                 <div className="col-lg-12">
-                  <div className="jumbotron bg-transparent text-center text-white">
-                    <h2 className="text-uppercase">Before &amp; After</h2>
-                    <p>
+                  <div className="jumbotron bg-transparent text-center">
+                    <h2 className="text-uppercase text-white">Before &amp; After</h2>
+                    <p className="text-white">
                       Our hand-crafted artistry is in a league of its own. View
                       our miraculous transformations below.
                     </p>
-                    <Button color="primary" className="text-uppercase">Start Repair</Button>
+                    <Link class="btn btn-primary text-uppercase">
+                      Start Repair
+                    </Link>
                   </div>
                   <article
                     className="carousel row"
@@ -168,42 +171,33 @@ export default class IndexPage extends React.Component {
                       <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/pick-up.png" alt="Card image cap" />
                       <CardBody>
                         <CardTitle className="text-white text-uppercase">Pick-Up Service</CardTitle>
-                        <Button
-                          outline
-                          block
-                          color="light"
-                          className="mt-auto text-uppercase"
+                        <Link
+                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
                         >
                           Schedule Now
-                        </Button>
+                        </Link>
                       </CardBody>
                     </Card>
                     <Card className="bg-transparent mt-4 text-center">
                       <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/Delivery_4.png" alt="Card image cap" />
                       <CardBody>
                         <CardTitle className="text-white text-uppercase">Delivery Service</CardTitle>
-                        <Button
-                          outline
-                          block
-                          color="light"
-                          className="mt-auto text-uppercase"
+                        <Link
+                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
                         >
                           Schedule Now
-                        </Button>
+                        </Link>
                       </CardBody>
                     </Card>
                     <Card className="bg-transparent mt-4 text-center">
                       <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/ticket-check.png" alt="Card image cap" />
                       <CardBody>
                         <CardTitle className="text-white text-uppercase">Check Repair Status</CardTitle>
-                        <Button
-                          outline
-                          block
-                          color="light"
-                          className="mt-auto text-uppercase"
+                        <Link
+                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
                         >
                           Check Repair Status
-                        </Button>
+                        </Link>
                       </CardBody>
                     </Card>
 
@@ -211,42 +205,34 @@ export default class IndexPage extends React.Component {
                       <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/pay.png" alt="Card image cap" />
                       <CardBody>
                         <CardTitle className="text-white text-uppercase">Pay For Services</CardTitle>
-                        <Button
-                          outline
-                          block
-                          color="light"
-                          className="mt-auto text-uppercase"
+                        <Link
+                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
                         >
                           Pay Now
-                        </Button>
+                        </Link>
                       </CardBody>
                     </Card>
                     <Card className="bg-transparent mt-4 text-center">
                       <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/tips.png" alt="Card image cap" />
                       <CardBody>
                         <CardTitle className="text-white text-uppercase">Tips From The Experts</CardTitle>
-                        <Button
-                          outline
-                          block
-                          color="light"
-                          className="mt-auto text-uppercase"
+                        <Link
+                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
                         >
                           Read More
-                        </Button>
+                        </Link>
                       </CardBody>
                     </Card>
                     <Card className="bg-transparent mt-4 text-center">
                       <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/operational-policies.png" alt="Card image cap" />
                       <CardBody>
                         <CardTitle className="text-white text-uppercase">Operational Policies</CardTitle>
-                        <Button
-                          outline
-                          block
-                          color="light"
-                          className="mt-auto text-uppercase"
+                        <Link
+                          to="/legal/policies"
+                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
                         >
                           Read More
-                        </Button>
+                        </Link>
                       </CardBody>
                     </Card>
                   </CardDeck>
@@ -269,7 +255,9 @@ export default class IndexPage extends React.Component {
                       Experience our expertise in-person at one of our
                       breathtaking Manhattan locations.
                     </p>
-                    <Button color="primary" className="text-uppercase">Contact Us</Button>
+                    <Link class="btn btn-primary text-uppercase">
+                    Contact Us
+                    </Link>
                   </div>
                 </div>
               </Row>
@@ -297,10 +285,8 @@ export default class IndexPage extends React.Component {
                       <br />
                       <b>Sunday</b> 11am - 5pm
                     </CardText>
-                    <Button color="primary" className="mt-auto" to={post.fields.slug}>
-                    Map + Directions
-                    </Button>
-                    </Card>
+                    <Link to={post.fields.slug} className="btn btn-primary mt-auto">Map + Directions</Link>
+                  </Card>
                 ))}
               </CardDeck>
             </Container>
