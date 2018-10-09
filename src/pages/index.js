@@ -16,6 +16,7 @@ import {
 } from "reactstrap";
 import Link from "../components/Link";
 import Layout from "../components/Layout";
+import SectionCarousel from "../components/SectionCarousel";
 import Map from "../components/Map";
 import Helmet from 'react-helmet';
 
@@ -31,31 +32,7 @@ export default class IndexPage extends React.Component {
           <link rel="canonical" href="https://leatherspa.com" />
         </Helmet>
         <main>
-          <section className="section section-carousel bg-beige z-15">
-            <ul className="list-unstyled mb-0">
-              <li>
-                <Container className="text-center">
-                  <Row>
-                    <Col md="8" />
-                    <Col md="4">
-                      <div className="jumbotron bg-transparent text-center text-white">
-                        <h2>
-                          New!
-                          <br />
-                          Expanded Service Coverage
-                        </h2>
-                        <p>
-                          Hello Brooklyn and Queens! Now we pick-up and deliver
-                          to parts of Brooklyn and Long Island City, Queens.
-                        </p>
-                        <Button color="primary">Learn More</Button>
-                      </div>
-                    </Col>
-                  </Row>
-                </Container>
-              </li>
-            </ul>
-          </section>
+          <SectionCarousel></SectionCarousel>
           <section className="section section-repair-services bg-leather z-15">
             <Container>
               <div className="jumbotron bg-transparent mb-0 text-center text-white">
