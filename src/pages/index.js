@@ -241,7 +241,9 @@ export default class IndexPage extends React.Component {
             </Container>
             <Container fluid={true} className="px-0">
               <Map>
-                <div lat={40.834960} lng={-73.942730}>AINT THIS SOME SHIT</div>
+                {data.businessLocations.edges.map(({ node: post }) => (
+                  <img key={post.id} lat={post.frontmatter.address.latitude} lng={post.frontmatter.address.longitude} text={post.id} src="https://leatherspa.com/assets/img/location.png" width="30"/>
+                ))}
               </Map>
             </Container>
             <Container className="pb-5">
@@ -298,6 +300,13 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            address {
+              street
+              post_code
+              city
+              latitude
+              longitude
+            }
           }
         }
       }

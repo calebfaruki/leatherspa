@@ -9,6 +9,9 @@ class Map extends Component {
     },
     zoom: 13,
     options: {
+      disableDefaultUI: true,
+      disableDoubleClickZoom: true,
+      draggable: false,
       styles: [
         {
           "elementType": "labels.icon",
