@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import {
   Container,
-  Row,
-  Col,
   Card,
   CardDeck,
   CardBody,
@@ -12,7 +10,6 @@ import {
   CardText,
   CardTitle,
   CardImgOverlay,
-  Button,
 } from "reactstrap";
 import Link from "../components/Link";
 import Layout from "../components/Layout";
@@ -70,177 +67,165 @@ export default class IndexPage extends React.Component {
           </section>
           <section className="section section-before-after bg-leather z-15">
             <Container className="pb-5">
-              <Row>
-                <div className="col-lg-12">
-                  <div className="jumbotron bg-transparent text-center">
-                    <h2 className="text-uppercase text-white">Before &amp; After</h2>
-                    <p className="text-white">
-                      Our hand-crafted artistry is in a league of its own. View
-                      our miraculous transformations below.
-                    </p>
-                    <Link class="btn btn-primary text-uppercase">
-                      Start Repair
-                    </Link>
+              <div className="jumbotron bg-transparent text-center">
+                <h2 className="text-uppercase text-white">Before &amp; After</h2>
+                <p className="text-white">
+                  Our hand-crafted artistry is in a league of its own. View
+                  our miraculous transformations below.
+                </p>
+                <Link className="btn btn-primary text-uppercase">
+                  Start Repair
+                </Link>
+              </div>
+              <article
+                className="carousel row"
+                data-carousel-mobile="orange"
+              >
+                <div className="col-xs-6 col-md-4">
+                  <div className="card">
+                    <img
+                      className="card-img"
+                      src="https://leatherspa.com/images/misc/08_Hover_Garments_option2.png"
+                      alt="Garments"
+                    />
+                    <div className="card-img-overlay" />
                   </div>
-                  <article
-                    className="carousel row"
-                    data-carousel-mobile="orange"
-                  >
-                    <div className="col-xs-6 col-md-4">
-                      <div className="card">
-                        <img
-                          className="card-img"
-                          src="https://leatherspa.com/images/misc/08_Hover_Garments_option2.png"
-                          alt="Garments"
-                        />
-                        <div className="card-img-overlay" />
-                      </div>
-                    </div>
-                    <div className="col-xs-6 col-md-4">
-                      <div className="card">
-                        <img
-                          className="card-img"
-                          src="https://leatherspa.com/images/misc/08_Hover_Garments_option2.png"
-                          alt="Garments"
-                        />
-                        <div className="card-img-overlay" />
-                      </div>
-                    </div>
-                    <div className="col-xs-6 col-md-4">
-                      <div className="card">
-                        <img
-                          className="card-img"
-                          src="https://leatherspa.com/images/misc/08_Hover_Garments_option2.png"
-                          alt="Garments"
-                        />
-                        <div className="card-img-overlay" />
-                      </div>
-                    </div>
-                  </article>
                 </div>
-              </Row>
+                <div className="col-xs-6 col-md-4">
+                  <div className="card">
+                    <img
+                      className="card-img"
+                      src="https://leatherspa.com/images/misc/08_Hover_Garments_option2.png"
+                      alt="Garments"
+                    />
+                    <div className="card-img-overlay" />
+                  </div>
+                </div>
+                <div className="col-xs-6 col-md-4">
+                  <div className="card">
+                    <img
+                      className="card-img"
+                      src="https://leatherspa.com/images/misc/08_Hover_Garments_option2.png"
+                      alt="Garments"
+                    />
+                    <div className="card-img-overlay" />
+                  </div>
+                </div>
+              </article>
             </Container>
           </section>
           <hr className="hr hr-leather z-14" />
           <section className="section section-customer-service bg-brown z-13">
             <Container className="py-5">
-              <Row>
-                <div className="col-lg-12">
-                  <div className="jumbotron bg-transparent text-center text-white mb-0">
-                    <h2 className="text-uppercase">
-                      <Link to="/" className="text-white">
-                        Customer Service
-                      </Link>
-                    </h2>
-                    <p>
-                      As a state-of-the-art repair facility, Leather Spa aims to
-                      service our clients needs whenever or wherever they may
-                      arise. From pick-up and delivery for our New York City
-                      clients, to mail-in orders worldwide, online payment and
-                      order status updates, and tips from our experts, discover
-                      all the ways Leather Spa can make your repair and care
-                      needs easier.
-                    </p>
-                  </div>
+              <div className="jumbotron bg-transparent text-center text-white mb-0">
+                <h2 className="text-uppercase">
+                  <Link to="/" className="text-white">
+                    Customer Service
+                  </Link>
+                </h2>
+                <p>
+                  As a state-of-the-art repair facility, Leather Spa aims to
+                  service our clients needs whenever or wherever they may
+                  arise. From pick-up and delivery for our New York City
+                  clients, to mail-in orders worldwide, online payment and
+                  order status updates, and tips from our experts, discover
+                  all the ways Leather Spa can make your repair and care
+                  needs easier.
+                </p>
+              </div>
 
-                  <CardDeck>
-                    <Card className="bg-transparent mt-4 text-center">
-                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/pick-up.png" alt="Card image cap" />
-                      <CardBody>
-                        <CardTitle className="text-white text-uppercase">Pick-Up Service</CardTitle>
-                        <Link
-                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
-                        >
-                          Schedule Now
-                        </Link>
-                      </CardBody>
-                    </Card>
-                    <Card className="bg-transparent mt-4 text-center">
-                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/Delivery_4.png" alt="Card image cap" />
-                      <CardBody>
-                        <CardTitle className="text-white text-uppercase">Delivery Service</CardTitle>
-                        <Link
-                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
-                        >
-                          Schedule Now
-                        </Link>
-                      </CardBody>
-                    </Card>
-                    <Card className="bg-transparent mt-4 text-center">
-                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/ticket-check.png" alt="Card image cap" />
-                      <CardBody>
-                        <CardTitle className="text-white text-uppercase">Check Repair Status</CardTitle>
-                        <Link
-                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
-                        >
-                          Check Repair Status
-                        </Link>
-                      </CardBody>
-                    </Card>
+              <CardDeck>
+                <Card className="bg-transparent mt-4 text-center">
+                  <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/pick-up.png" alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle className="text-white text-uppercase">Pick-Up Service</CardTitle>
+                    <Link
+                      className="btn btn-outline-light btn-block mt-auto text-uppercase"
+                    >
+                      Schedule Now
+                    </Link>
+                  </CardBody>
+                </Card>
+                <Card className="bg-transparent mt-4 text-center">
+                  <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/Delivery_4.png" alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle className="text-white text-uppercase">Delivery Service</CardTitle>
+                    <Link
+                      className="btn btn-outline-light btn-block mt-auto text-uppercase"
+                    >
+                      Schedule Now
+                    </Link>
+                  </CardBody>
+                </Card>
+                <Card className="bg-transparent mt-4 text-center">
+                  <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/ticket-check.png" alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle className="text-white text-uppercase">Check Repair Status</CardTitle>
+                    <Link
+                      className="btn btn-outline-light btn-block mt-auto text-uppercase"
+                    >
+                      Check Repair Status
+                    </Link>
+                  </CardBody>
+                </Card>
 
-                    <Card className="bg-transparent mt-4 text-center">
-                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/pay.png" alt="Card image cap" />
-                      <CardBody>
-                        <CardTitle className="text-white text-uppercase">Pay For Services</CardTitle>
-                        <Link
-                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
-                        >
-                          Pay Now
-                        </Link>
-                      </CardBody>
-                    </Card>
-                    <Card className="bg-transparent mt-4 text-center">
-                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/tips.png" alt="Card image cap" />
-                      <CardBody>
-                        <CardTitle className="text-white text-uppercase">Tips From The Experts</CardTitle>
-                        <Link
-                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
-                        >
-                          Read More
-                        </Link>
-                      </CardBody>
-                    </Card>
-                    <Card className="bg-transparent mt-4 text-center">
-                      <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/operational-policies.png" alt="Card image cap" />
-                      <CardBody>
-                        <CardTitle className="text-white text-uppercase">Operational Policies</CardTitle>
-                        <Link
-                          to="/legal/policies"
-                          class="btn btn-outline-light btn-block mt-auto text-uppercase"
-                        >
-                          Read More
-                        </Link>
-                      </CardBody>
-                    </Card>
-                  </CardDeck>
-                </div>
-              </Row>
+                <Card className="bg-transparent mt-4 text-center">
+                  <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/pay.png" alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle className="text-white text-uppercase">Pay For Services</CardTitle>
+                    <Link
+                      className="btn btn-outline-light btn-block mt-auto text-uppercase"
+                    >
+                      Pay Now
+                    </Link>
+                  </CardBody>
+                </Card>
+                <Card className="bg-transparent mt-4 text-center">
+                  <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/tips.png" alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle className="text-white text-uppercase">Tips From The Experts</CardTitle>
+                    <Link
+                      className="btn btn-outline-light btn-block mt-auto text-uppercase"
+                    >
+                      Read More
+                    </Link>
+                  </CardBody>
+                </Card>
+                <Card className="bg-transparent mt-4 text-center">
+                  <CardImg className="mx-auto" width="80" src="https://leatherspa.com/assets/img/operational-policies.png" alt="Card image cap" />
+                  <CardBody>
+                    <CardTitle className="text-white text-uppercase">Operational Policies</CardTitle>
+                    <Link
+                      to="/legal/policies"
+                      className="btn btn-outline-light btn-block mt-auto text-uppercase"
+                    >
+                      Read More
+                    </Link>
+                  </CardBody>
+                </Card>
+              </CardDeck>
             </Container>
           </section>
           <hr className="hr hr-brown z-12" />
           <section className="section section-locations bg-suede z-11 mt-5">
             <Container>
-              <Row>
-                <div className="col-lg-12">
-                  <div className="jumbotron bg-transparent text-center">
-                    <h2>
-                      <Link to="/" className="text-dark text-uppercase">
-                        Locations
-                      </Link>
-                    </h2>
-                    <p>
-                      Experience our expertise in-person at one of our
-                      breathtaking Manhattan locations.
-                    </p>
-                    <Link class="btn btn-primary text-uppercase">
-                    Contact Us
-                    </Link>
-                  </div>
-                </div>
-              </Row>
+              <div className="jumbotron bg-transparent text-center">
+                <h2>
+                  <Link to="/" className="text-dark text-uppercase">
+                    Locations
+                  </Link>
+                </h2>
+                <p>
+                  Experience our expertise in-person at one of our
+                  breathtaking Manhattan locations.
+                </p>
+                <Link className="btn btn-primary text-uppercase">
+                Contact Us
+                </Link>
+              </div>
             </Container>
             <Container fluid={true} className="px-0">
-              <Map>
+            <Map>
                 {data.businessLocations.edges.map(({ node: post }) => (
                   <img key={post.id} lat={post.frontmatter.address.latitude} lng={post.frontmatter.address.longitude} text={post.id} src="https://leatherspa.com/assets/img/location.png" width="30"/>
                 ))}
@@ -256,7 +241,7 @@ export default class IndexPage extends React.Component {
                       </Link>
                     </CardTitle>
                     <CardText>
-                      1 West 58th Street, New York, NY 10019
+                      {post.frontmatter.address.street}, {post.frontmatter.address.city}, NY {post.frontmatter.address.post_code}
                       <br />
                       <b>​Mon - Fri</b> 8am - 7pm
                       <br />
