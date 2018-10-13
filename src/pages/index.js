@@ -225,7 +225,11 @@ export default class IndexPage extends React.Component {
               </div>
             </Container>
             <Container fluid={true} className="px-0">
-            <Map businessLocations={businessLocations}/>
+            <Map>
+              {businessLocations.map(({ node: place }, index) => (
+                <img key={index} lat={place.frontmatter.address.latitude} lng={place.frontmatter.address.longitude} src="http://placehold.it/30" />
+              ))}
+            </Map>
             </Container>
             <Container className="pb-5">
               <CardDeck>
