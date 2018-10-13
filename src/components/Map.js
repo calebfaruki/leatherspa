@@ -4,11 +4,12 @@ import GoogleMapReact from "google-map-react";
 // Return map bounds based on list of places
 const getMapBounds = (map, maps, places) => {
   const bounds = new maps.LatLngBounds();
-
+  console.log('places here')
+  console.log(places)
   places.forEach((place) => {
     bounds.extend(new maps.LatLng(
-      place.geometry.location.lat,
-      place.geometry.location.lng,
+      place.lat,
+      place.lng,
     ));
   });
   return bounds;
@@ -227,7 +228,10 @@ class Map extends Component {
           onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps, places)}
           options={this.props.options}
         >
-          {this.props.children}
+          {this.props.businessLocations.map(({ node: place }) => {
+            console.log(place)
+            return (<img lat={place.frontmatter.address.latitude} lng={place.frontmatter.address.longitude} src="http://placehold.it/30" />)
+          })}
         </GoogleMapReact>
       </div>
     );
