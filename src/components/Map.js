@@ -227,9 +227,7 @@ class Map extends Component {
           onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps, places)}
           options={this.props.options}
         >
-          {this.state.places.map(({ node: place }) => (
-            <img lat={place.lat} lng={place.lng} src="http://placehold.it/30" />
-          ))}
+          {this.props.children}
         </GoogleMapReact>
       </div>
     );
